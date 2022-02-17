@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicio-destino-deployment
+  labels:
+    app: servicio-cliente-destino
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicio-destino
+  template:
+    metadata:
+      name: servicio-destino-pod
+      labels:
+        app: servicio-destino
+    spec:
+      containers:
+      - name: servicio-destino
+        image: jlbedrillanadk/servicio-destino:1.0
+        ports:
+        - containerPort: 8082

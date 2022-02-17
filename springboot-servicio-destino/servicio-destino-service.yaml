@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: servicio-destino-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: servicio-destino
+  ports:
+  - protocol: TCP
+    port: 8082
+    targetPort: 8082

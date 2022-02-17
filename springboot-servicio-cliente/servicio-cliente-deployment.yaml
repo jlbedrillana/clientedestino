@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicio-cliente-deployment
+  labels:
+    app: servicio-cliente-destino
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: servicio-cliente
+  template:
+    metadata:
+      name: servicio-cliente-pod
+      labels:
+        app: servicio-cliente
+    spec:
+      containers:
+      - name: servicio-cliente
+        image: jlbedrillanadk/servicio-cliente:1.0
+        ports:
+        - containerPort: 8081

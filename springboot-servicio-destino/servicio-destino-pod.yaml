@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-destino-pod
+  labels:
+    app: servicio-destino
+spec:
+  containers:
+  - name: servicio-destino
+    image: jlbedrillanadk/servicio-destino:1.0
+    ports:
+    - containerPort: 8082

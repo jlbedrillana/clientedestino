@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mssql-service
+  labels:
+    name: mssql-service
+    app:  database
+spec:
+  type: LoadBalancer
+  selector:
+    app: servicio-bmatic
+    name: mssql-pod
+  ports:
+  - port: 1433
+    targetPort: 1433

@@ -26,4 +26,4 @@ spec:
         - name: ACCEPT_EULA
           value: "Y"
         - name: SA_PASSWORD
-          value: "Server1"
+          value: "$VaxiDrez2025"

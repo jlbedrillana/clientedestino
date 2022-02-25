@@ -15,6 +15,7 @@ spec:
       name: servicio-bmatic-pod
       labels:
         app: servicio-bmatic
+        name: servicio-bmatic-pod
     spec:
       containers:
       - name: servicio-bmatic

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicio-bmatic-deployment
+  labels:
+    app: servicio-bmatic-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicio-bmatic
+      name: servicio-bmatic-pod
+  template:
+    metadata:
+      name: servicio-bmatic-pod
+      labels:
+        app: servicio-bmatic
+    spec:
+      containers:
+      - name: servicio-bmatic
+        image: devduv/api-image:latest
+        ports:
+        - containerPort: 8091
